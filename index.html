@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <html lang="pt-br"></html>
+        <meta charset="UTF-8"/>
+        <title>Central de Gerenciamento</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <link href="css/fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
+        <script src="javascript/javascript.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+<!------------------------------------------------------------------------------ Usuário -------------------------------------------------------------------------------->
+        <div class="container-fixed">
+            <div class="navbar row">
+                <div class="col-xl-8 col-sm-12 cgerenciamento">Central de Gerenciamento</div>
+                <h6 class="col-xl-3 col-sm-6 textusuario">Renner</h6>
+                <i class="col-xl-1 col-sm-6 fas fa-user-circle"></i>
+            </div>
+        </div>
+<!------------------------------------------------------------------------------- Botões -------------------------------------------------------------------------------->
+        <div class="container-fixed">
+            <div class="botoes">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=&su=Boas-Vindas&body=Ol%C3%A1!%20Seja%20bem%20vindo%20ao%20time%20da%20Lina!%0A%0APara%20que%20possamos%20criar%20o%20seu%20e-mail%20corporativo%2C%20%C3%A9%20necess%C3%A1rio%20que%20voc%C3%AA%20responda%20o%20seguinte%20question%C3%A1rio%20abaixo%3A%0A%0Ahttps%3A%2F%2Fform.jotform.com%2F201958806808062%0A%0AAtenciosamente%2C&bcc=" target="_blank"><button type="col-xl-2 button" class="btn btn" onclick="copiarTextoFormulario()">Formulário</button></a>
+                <a href="https://admin.google.com/ac/users" target="_blank"><button type="col-xl-2 button" class="btn btn">Gsuite</button></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=&su=Primeiro%20Acesso%20Lina&body=Ol%C3%A1%2C%0A%0AFa%C3%A7a%20seu%20primeiro%20login%20com%20sua%20conta%20Lina.%0A%0AUsu%C3%A1rio%20Lina%3A%20%0ASenha%20provis%C3%B3ria%3A%20L!n4%4020z0!%0A%0AAcesse%20o%20link%20atrav%C3%A9s%20de%20uma%20guia%20an%C3%B4nima%3A%20https%3A%2F%2Fmail.google.com%20%0A%0ACaso%20tenha%20alguma%20d%C3%BAvida%20neste%20primeiro%20acesso%2C%20veja%20o%20nosso%20passo%20a%20passo%20que%20segue%20em%20anexo%3A%0A%0AAtenciosamente%2C&bcc=" target="_blank"><button type="col-xl-2 button" class="btn btn" onclick="copiarTextoRetorno()">Retorno</button></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=&su=Boas-Vindas&body=Ol%C3%A1!%20Seja%20bem%20vindo%20a%20fam%C3%ADlia%20Lina!%0A%0AA%20Lina%20%C3%A9%20uma%20fintech%20que%20busca%20conectar%20novos%20Neg%C3%B3cios%20%C3%A0%20Rede%20do%20Sistema%20Financeiro%20Nacional%20de%20forma%20r%C3%A1pida%20e%20segura.%20Voc%C3%AA%20faz%20parte%20dessa%20evolu%C3%A7%C3%A3o%20financeira%20e%20%C3%A9%20um%20enorme%20orgulho%20ter%20voc%C3%AA%20com%20a%20gente.%0A%0APara%20saber%20um%20pouco%20mais%20sobre%20a%20Lina%20e%20estar%20por%20dentro%20das%20ferramentas%20que%20utilizamos%20acesse%20este%20link%3A%0A%0Ahttps%3A%2F%2Fwww.linapay.io%2Fonboarding%0A%0AAtenciosamente%2C&bcc=" target="_blank"><button type="col-xl-2 button" class="btn btn" onclick="copiarTextoBoasVindas()">Boas-Vindas</button></a>
+                <button type="col-xl-2 button" class="btn btn" onClick="window.print()" id="relatorio" target="_blank">Relatório</button>
+            </div>
+        </div>
+<!------------------------------------------------------------------------------- Painéis ------------------------------------------------------------------------------->
+        <div class="container-fixed">
+            <div class="cards">
+                <div class="card col-xl-5.5">
+                    <div class="card-body card-onbording">
+                        <h5 class="card-title">Deadline Onboarding</h5>
+                        <h6 class="card-text">Acompanhamento de etapas Onboarding por funcionario:</h6>
+                        <script type="text/javascript">
+                            google.charts.load("current", { packages: ["timeline"] });
+                            google.charts.setOnLoadCallback(drawChart);
+
+                            function drawChart() {
+                                var container = document.getElementById('example5.1');
+                                var chart = new google.visualization.Timeline(container);
+                                var dataTable = new google.visualization.DataTable();
+                                dataTable.addColumn({ type: 'string', id: 'Room' });
+                                dataTable.addColumn({ type: 'string', id: 'Name' });
+                                dataTable.addColumn({ type: 'date', id: 'Start' });
+                                dataTable.addColumn({ type: 'date', id: 'End' });
+                                dataTable.addRows([
+                                    ['Funcionario1', '', new Date(0, 0, 0, 0, 0, 0), new Date(0, 0, 0, 4, 0, 0)],
+                                    ['Funcionario2', '', new Date(0, 0, 0, 0, 0, 0), new Date(0, 0, 0, 5, 0, 0)],
+                                    ['Funcionario3', '', new Date(0, 0, 0, 0, 0, 0), new Date(0, 0, 0, 2, 0, 0)],
+                                    ['Funcionario4', '', new Date(0, 0, 0, 0, 0, 0), new Date(0, 0, 0, 3, 0, 0)],
+                                    ['Funcionario5', '', new Date(0, 0, 0, 0, 0, 0), new Date(0, 0, 0, 3, 0, 0)]]);
+                                    
+                                var options = {
+                                    timeline: { colorByRowLabel: true }
+                                };
+
+                                chart.draw(dataTable, options);
+                            }
+                        </script>
+                    <div id="example5.1" style="height: 350px;" style="width: 350px;"></div>
+                    </div>
+                </div>
+                <div class="card col-xl-5.5">
+                    <div class="card-body" id="funcionarios">
+                        <h5 class="card-title">Funcionários</h5>
+                            <div class="textos">
+                                <h5>Funcionários</h5>
+                                <h5>Status</h5>
+                            </div>  
+                        <form>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="funcionarios">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" placeholder="Funcionário1">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1">Completo</input>
+                                        </div>
+                                    </div>
+                                    <div class="funcionarios">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" placeholder="Funcionário2">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1">Completo</input>
+                                        </div>
+                                    </div>
+                                    <div class="funcionarios">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" placeholder="Funcionário3">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1">Completo</input>
+                                        </div>
+                                    </div>
+                                    <div class="funcionarios">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" placeholder="Funcionário4">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1">Completo</input>
+                                        </div>
+                                    </div>
+                                    <div class="funcionarios">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" placeholder="Funcionário5">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1">Completo</input>
+                                        </div>
+                                    </div>
+                                    <div class="funcionarios">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" placeholder="Funcionário6">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1">Completo</input>
+                                        </div>
+                                    </div>
+                                    <div class="funcionarios">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" placeholder="Funcionário7">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1">Completo</input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

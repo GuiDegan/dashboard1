@@ -1,0 +1,83 @@
+body {
+    font-family: Poppins;
+}
+
+.navbar {
+    background-color: #C4C4C4;
+    margin-right: 0px;
+}
+
+.cgerenciamento {
+    font-size: 34px;
+    padding-left: 3%;
+}
+
+.textusuario {
+    font-size: 22px;
+    padding-left: 15rem;
+}
+
+.fa-user-circle {
+    font-size: 54px;
+    text-align: center;
+}
+
+.botoes {
+    background-color: #005B59;
+    height: 130px;
+}
+
+.btn {
+    margin: 3% 0% 0% 3%;
+    height: 55px;
+    width: 212px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: #EDEDED;
+    color: #000000;
+    box-shadow: 0px 4px 4px 0px;
+}
+
+.cards {
+    display: flex;
+    background-color: #00DC8D;
+    height: 440px;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.card-onbording {
+    width: 600px;
+}
+
+.card {
+    margin-left: 3.2%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #C4C4C4;
+}
+
+.card-onbording h6 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.card-title {
+    text-align: center; 
+}
+
+.textos {
+    padding-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.funcionarios {
+    display: flex;
+}
+
+.form-control {
+    width: 420px;
+}
+
+.form-check {
+    padding: 0.5rem 0rem 0rem 3rem;
+}
